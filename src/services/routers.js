@@ -1,13 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import WelcomePage from "../pages/WelcomePage";
+import RequireAuth from "./RequireAuth";
 
 
 const routers = createBrowserRouter([
     {
         path: "/",
         element: (
-            <App></App>
+            <RequireAuth>
+                <App></App>
+            </RequireAuth>
         ),
     },
     {
@@ -16,8 +19,8 @@ const routers = createBrowserRouter([
             <WelcomePage></WelcomePage>
         ),
     },
-    
-    
+
+
 
 ])
 export default routers;
